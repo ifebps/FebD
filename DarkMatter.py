@@ -2,6 +2,19 @@ import socket
 from time import sleep
 import multiprocessing, random
 
+print("Detecting System...")
+sysOS = platform.system()
+print("System detected: ", sysOS)
+
+if sysOS == "Linux":
+  try:
+    os.system("ulimit -n 999999")
+  except Exception as e:
+    print(e)
+    print("Could not start the script")
+else:
+  print("Your system is not Linux, You may not be able to run this script in some systems")
+
 
 def randomip():
   randip = ".".join(str(random.randint(0, 255)) for _ in range(4))
