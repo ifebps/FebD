@@ -2,6 +2,8 @@
 
 Dark Matter is a Stresser that attacks on Layer 7, i have been developing this for a time... i guess it is one of the betters free-opensource DDoS Scripts. **(this is for testing purposes only or if you are allowed to perform the ddos attack)**
 
+**"USAGE >>> Python3 DarkMatter.py"**
+
 **Features:**
 
 **- DDoS Simulation: It can simulate a real DDoS with big power**
