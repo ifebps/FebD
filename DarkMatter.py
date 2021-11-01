@@ -3,9 +3,7 @@ import os
 from time import sleep
 import multiprocessing
 import random
-print("Attempting to install plataform module")
-os.system("pip install plataform")
-import plataform
+import platform
 
 print("Detecting System...")
 sysOS = platform.system()
